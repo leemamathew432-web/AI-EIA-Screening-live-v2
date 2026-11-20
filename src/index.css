@@ -1,0 +1,139 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+@import "katex/dist/katex.min.css";
+
+@layer base {
+  :root {
+    --font-display: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-sans: 'DM Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    background-color: #042f2e;
+    color: #ecfdf5;
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #042f2e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0f524e;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #14736e;
+}
+
+/* Leaflet overrides */
+.leaflet-container {
+  background: #032423;
+  font-family: var(--font-sans);
+}
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  background: #063836;
+  color: #ecfdf5;
+  border: 1px solid rgba(45, 212, 191, 0.35);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+}
+
+.leaflet-popup-close-button {
+  color: #99f6e4 !important;
+}
+
+.leaflet-control-attribution {
+  background: rgba(3, 36, 35, 0.84) !important;
+  color: #99f6e4 !important;
+  font-size: 10px !important;
+}
+
+.leaflet-control-attribution a {
+  color: #2dd4bf !important;
+}
+
+/* KaTeX theme adjustment */
+.katex {
+  font-size: 1em;
+  color: #99f6e4;
+}
+
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
+
+@keyframes cloud-drift-slow {
+  0% {
+    transform: translateX(-8%);
+  }
+  50% {
+    transform: translateX(8%);
+  }
+  100% {
+    transform: translateX(-8%);
+  }
+}
+
+@keyframes cloud-drift-reverse {
+  0% {
+    transform: translateX(6%);
+  }
+  50% {
+    transform: translateX(-6%);
+  }
+  100% {
+    transform: translateX(6%);
+  }
+}
+
+.animate-cloud-drift-slow {
+  animation: cloud-drift-slow 38s ease-in-out infinite;
+}
+
+.animate-cloud-drift-reverse {
+  animation: cloud-drift-reverse 46s ease-in-out infinite;
+}
+
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+@media (max-width: 767px) {
+  html,
+  body {
+    -webkit-tap-highlight-color: transparent;
+    overscroll-behavior-y: contain;
+  }
+}
+
+

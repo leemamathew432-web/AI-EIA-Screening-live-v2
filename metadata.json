@@ -1,0 +1,6 @@
+{
+  "name": "Brahmapuram Environmental Observatory",
+  "description": "Real-time environmental intelligence, atmospheric plume dispersion, river hydrology, and civic health advisory platform for Brahmapuram and Kakkanad, Kochi.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
