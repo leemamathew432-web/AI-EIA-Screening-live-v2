@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import type { ReactNode } from 'react';
 import { DataStatusBadge } from './DataStatusBadge';
 import { MathBlock } from './MathBlock';
+import { AiInsight } from './AiInsight';
 import type { DataBadgeType } from '../types/telemetry';
 
 export interface CollectsRow {
@@ -134,6 +135,9 @@ export function InnovationLayout({
 
       {/* Primary Live Output & Interactive Visuals */}
       <div className="space-y-8">{children}</div>
+
+      {/* AI explanation of this observation (Gemini) */}
+      <AiInsight page={code} />
 
       {/* What It Collects (omitted for I-4) */}
       {!hideTechnicalSections && collectsRows && collectsRows.length > 0 && (
