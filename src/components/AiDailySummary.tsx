@@ -80,6 +80,7 @@ export function AiDailySummary() {
         direction: plume.downwindCompass,
         affectedPlaces: plume.receptors
           .filter((r) => r.status === 'DIRECT DOWNWIND' || r.status === 'CROSSWIND EDGE')
+          .filter((r) => r.receptor.id !== 'kochi-center') // MG Road is not named in the summary
           .map((r) => ({
             name: r.receptor.shortName,
             status: r.status,
@@ -156,8 +157,22 @@ export function AiDailySummary() {
     }
   }
 
-  const lines = (summary || '').split('\n').map((l) => l.trim()).filter(Boolean);
-  const bullets = lines.map((l) => l.replace(/^[*\-•]\s+/, '').replace(/\*\*/g, ''));
+  const lines = (summary || '')
+    .split('\n')
+    .map((l) => l.trim().replace(/^[*\-•]\s+/, '').replace(/\*/g, '').trim())
+    .filter(Boolean)
+    // drop the disclaimer line (already shown in the footer)
+    .filter((l) => !/screening tool, not an official alert/i.test(l));
+  // join a lone "As of HH:MM IST:" line with the next bullet
+  const bullets: string[] = [];
+  for (const l of lines) {
+    const prev = bullets[bullets.length - 1];
+    if (prev !== undefined && /^As of \d{1,2}:\d{2} IST:?$/i.test(prev)) {
+      bullets[bullets.length - 1] = `${prev.replace(/:?$/, ':')} ${l}`;
+    } else {
+      bullets.push(l);
+    }
+  }
 
   return (
     <section className="rounded-xl border border-teal-800/70 bg-[#063836] p-5">
