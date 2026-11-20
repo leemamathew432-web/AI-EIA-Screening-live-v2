@@ -28,6 +28,7 @@ import {
 } from 'recharts';
 import { DataStatusBadge } from '../components/DataStatusBadge';
 import { useObservatory } from '../context/ObservatoryContext';
+import { AiInsight } from '../components/AiInsight';
 import { classifyNaqi, type NaqiCategory } from '../physics/naqi';
 import { getNowKolkataIsoPrefix } from '../services/openMeteo';
 
@@ -1291,6 +1292,9 @@ export function LiveConditions() {
           </div>
         </div>
       </section>
+
+      {/* AI explanation of live air quality (Gemini) */}
+      <AiInsight page="live" />
 
       {/* 6. SECTION C — "Prevent Health Problems: Understand Your Risks" */}
       <section className="rounded-xl border border-teal-800/70 bg-[#063836] p-6 space-y-6">

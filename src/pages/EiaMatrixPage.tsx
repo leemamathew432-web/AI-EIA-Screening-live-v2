@@ -2,6 +2,7 @@ import { AlertTriangle, Check, CheckCircle2, Copy, RefreshCw, Star } from 'lucid
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useObservatory } from '../context/ObservatoryContext';
+import { AiInsight } from '../components/AiInsight';
 import type { OverallVerdictTier, SignificanceLabel } from '../physics/eiaMatrix';
 
 interface FitRow {
@@ -168,6 +169,9 @@ export function EiaMatrixPage() {
           <span>Refresh</span>
         </button>
       </header>
+
+      {/* AI explanation of the EIA verdict (Gemini) */}
+      <AiInsight page="eia" />
 
       {/* SECTION 1 — Observation Relevance Table */}
       <section className="rounded-xl border border-teal-800/70 bg-[#063836] p-6">
