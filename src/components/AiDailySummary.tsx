@@ -80,7 +80,6 @@ export function AiDailySummary() {
         direction: plume.downwindCompass,
         affectedPlaces: plume.receptors
           .filter((r) => r.status === 'DIRECT DOWNWIND' || r.status === 'CROSSWIND EDGE')
-          .filter((r) => r.receptor.id !== 'kochi-center') // MG Road is not named in the summary
           .map((r) => ({
             name: r.receptor.shortName,
             status: r.status,
