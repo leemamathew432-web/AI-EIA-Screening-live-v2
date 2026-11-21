@@ -108,7 +108,7 @@ export function PlumeTrajectoryPage() {
             Interactive What-If Wind & Plume Cone Controls
           </h2>
           <p className="text-xs text-teal-100/70">
-            Test hypothetical wind headings, speeds, and dispersion cone angles against the 8 Kakkanad–Kochi receptors.
+            Test hypothetical wind headings, speeds, and dispersion cone angles against the 7 Kakkanad receptors.
           </p>
         </div>
         {isSimMode && (
@@ -193,7 +193,7 @@ export function PlumeTrajectoryPage() {
     <InnovationLayout
       code="I-1"
       title="Live Downwind Plume Trajectory & Receptor Arrival Cone"
-      subtitle="Projects a dynamic Gaussian atmospheric dispersion cone from Brahmapuram (9.9880° N, 76.3680° E) across 8 Kakkanad–Kochi receptors using live Open-Meteo wind vectors and Briggs (1973) rural dispersion."
+      subtitle="Projects a dynamic Gaussian atmospheric dispersion cone from Brahmapuram (9.9880° N, 76.3680° E) across 7 Kakkanad receptors using live Open-Meteo wind vectors and Briggs (1973) rural dispersion."
       badgeType="MODELLED"
       badgeDetail={`Pasquill-Gifford Class ${plume.stabilityClass} · Briggs (1973) Gaussian`}
       badgeFormulaName="Gaussian Ground-Level Plume (500 m Normalized)"
@@ -335,7 +335,7 @@ export function PlumeTrajectoryPage() {
       {/* Receptor Matrix Table */}
       <section className="rounded-xl border border-teal-800/70 bg-[#063836] p-6 space-y-4">
         <h2 className="font-display text-lg font-bold text-white">
-          8-Receptor Haversine Plume Impact Matrix
+          7-Receptor Haversine Plume Impact Matrix
         </h2>
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs">
