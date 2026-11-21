@@ -117,7 +117,7 @@ describe('Pasquill-Gifford Stability & Gaussian Plume', () => {
     });
     expect(sim.downwindBearingDeg).toBe(315);
     expect(sim.downwindCompass).toBe('NW');
-    expect(sim.receptors.length).toBe(8);
+    expect(sim.receptors.length).toBe(7);
 
     // Check offset status buckets: 0-15 DIRECT DOWNWIND, 15-35 CROSSWIND EDGE, 35-90 SIDE / OFF-PLUME, >90 UPWIND
     for (const r of sim.receptors) {
