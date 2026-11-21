@@ -82,14 +82,6 @@ export const RECEPTORS: ReceptorDefinition[] = [
     lon: 76.3581, // VERIFY ON GOOGLE MAPS
   },
   {
-    id: 'kochi-center',
-    name: 'Kochi City Centre / MG Road',
-    shortName: 'MG Road',
-    category: 'Urban Centre',
-    lat: 9.9639, // VERIFY ON GOOGLE MAPS
-    lon: 76.2875, // VERIFY ON GOOGLE MAPS
-  },
-  {
     id: 'jbs-brahmapuram',
     name: 'Govt. J.B.S. Brahmapuram',
     shortName: 'Govt. JBS',
