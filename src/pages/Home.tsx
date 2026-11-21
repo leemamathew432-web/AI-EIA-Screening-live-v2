@@ -464,7 +464,7 @@ export function Home() {
             Live GIS Plume & Kadambrayar Study Geofence
           </h2>
           <span className="font-mono text-xs text-teal-200/80">
-            8 Monitored Receptors · Animated Advection Particles
+            7 Monitored Receptors · Animated Advection Particles
           </span>
         </div>
         <PlumeMap plume={plume} heightClass="h-[440px]" />

@@ -32,7 +32,7 @@ export function Methods() {
         },
       ],
       relevance:
-        'Projects a live ±15° dispersion cone from Brahmapuram across the 8 Kakkanad–Kochi receptor hubs (Infopark Ph-I/II, SmartCity Kochi, Rajagiri Valley, local schools), computing real-time arrival ETAs (x/u) and relative dilution ratios as wind shifts.',
+        'Projects a live ±15° dispersion cone from Brahmapuram across the 7 Kakkanad receptor hubs (Infopark Ph-I/II, SmartCity Kochi, Rajagiri Valley, local schools), computing real-time arrival ETAs (x/u) and relative dilution ratios as wind shifts.',
     },
     {
       code: 'I-2',
@@ -118,7 +118,7 @@ export function Methods() {
       code: 'I-1',
       pathway: 'Atmospheric Particulate & VOC Advection',
       driver: '10 m Wind Vector + Solar Radiation',
-      receptors: '8 Kakkanad–Kochi Campuses (5 km radius)',
+      receptors: '7 Kakkanad Campuses (5 km radius)',
       output: 'Plume Alignment, Advection ETA (min), % of 500 m',
     },
     {
